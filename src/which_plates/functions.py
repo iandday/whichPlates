@@ -34,9 +34,9 @@ def calc_plates(weight: int, available_plates: list) -> dict:
         dict: number of plates per weight to reach supplied weight
     """
     plates = {}
-    remaining_weight = Decimal(round_num(weight)) / Decimal(2)
+    remaining_weight = Decimal(round_num(weight))
     for plate in available_plates:
-        if remaining_weight / Decimal(plate) >= Decimal(1):
-            plates[plate] = Decimal(remaining_weight) // Decimal(plate)
+        if remaining_weight / Decimal(plate) >= Decimal(2):
+            plates[plate] = int(Decimal(remaining_weight) // Decimal(plate))
             remaining_weight -= Decimal(plate) * Decimal(plates[plate])
     return plates
