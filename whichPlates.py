@@ -17,33 +17,11 @@ def func_input_sets():
 
 
 ##############################################################
-# func_round_num(number)
-# This function rounds input to the nearest multiple of 5.
-# inputs: number to be rounded
-# returns: rounded number
-def func_round_num(number):
-    if number % 10 < 5:
-        roundedNumber = (number - (number % 10))
-    elif number % 10 > 5:
-        roundedNumber = (number + (10 - (number % 10)))
-    else:
-        roundedNumber = number
-    return roundedNumber
+
 
 
 ##############################################################
-# func_calc_plates(weight, availablePlates)
-# This function computes the required weight plates to reach supplied weight
-# inputs: weight is desired weight, availablePlates is a list of plates to use.
-# returns: dictionary of plates to reach specified weight.
-def func_calc_plates(weight, availablePlates):
-    plates = {}
-    remainingWeight = Decimal(func_round_num(weight)) / Decimal(2)
-    for plate in availablePlates:
-        if remainingWeight / Decimal(plate) >= Decimal(1):
-            plates[plate] = Decimal(remainingWeight) // Decimal(plate)
-            remainingWeight -= Decimal(plate) * Decimal(plates[plate])
-    return plates
+
 
 
 if __name__ == "__main__":
