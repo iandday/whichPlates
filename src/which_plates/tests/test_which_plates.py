@@ -24,8 +24,6 @@ class TestWhichPlates(unittest.TestCase):
             round_num('g')
 
 
-
-
     def test_main(self):
         '''Main function'''
         sys.argv=['']
