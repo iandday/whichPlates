@@ -41,14 +41,14 @@ jobs:
       run: |
         source env/bin/activate
         safety check
-    # - name: "Test: pytest"
-    #   run: |
-    #     source env/bin/activate
-    #     py.test --verbose
-    # - name: "Test: coverage"
-    #   run: |
-    #     source env/bin/activate
-    #     pytest --cov which_plates
+    - name: "Test: pytest"
+      run: |
+        source env/bin/activate
+        py.test --verbose
+    - name: "Test: coverage"
+      run: |
+        source env/bin/activate
+        pytest --cov which_plates
     - name: Build package
       run: |
         source env/bin/activate

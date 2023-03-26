@@ -10,6 +10,12 @@ def round_num(number: float) -> int:
     Returns:
         int: rounded number
     """
+    
+    try:
+        number = float(number)
+    except ValueError as value_error:
+        raise SystemExit(1) from value_error
+        
     if number % 10 < 5:
         rounded_number = number - (number % 10)
     elif number % 10 > 5:
