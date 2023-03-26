@@ -15,10 +15,10 @@ def main_function(bar_weight, rep_max, available_plates, percentages):
         used_plates[plates] = 0
 
     for percent in percentages:
-        
+
         # calculate plate weight needed for current percentage
         plate_weight = functions.round_num((rep_max * percent) - bar_weight)
-        
+
         if plate_weight <= 0:
             print('    Computed weight less than bar weight, try again')
         else:
@@ -28,15 +28,15 @@ def main_function(bar_weight, rep_max, available_plates, percentages):
 
         plates = functions.calc_plates(plate_weight, available_plates)
         for p_weight, p_count in plates.items():
-            if used_plates[p_weight] < plates[p_weight]:
+            if used_plates[p_weight] < p_count:
                 used_plates[p_weight] = p_count
         set_count += 1
 
     # Print summary
     for p_weight, p_count in used_plates.items():
-        if used_plates[p_weight]:
+        if p_count:
             print(F'     {p_weight}: {p_count}')
-    
+
     return 0
 
 
@@ -52,5 +52,5 @@ def main():
     sys.exit(main_function(bar_weight, rep_max, available_plates, percentages))
 
 if __name__ == "__main__":
-    
+
     main()

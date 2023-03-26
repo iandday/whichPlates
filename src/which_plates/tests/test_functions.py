@@ -2,7 +2,6 @@
 
 import pytest
 
-from which_plates import main
 from which_plates.functions import round_num, calc_plates
 
 
@@ -22,14 +21,15 @@ def test_round_num_int():
 
 def test_round_num_string():
     '''String input'''
-    
+
     with pytest.raises(SystemExit) as pytest_wrapped_e:
         round_num('g')
     assert pytest_wrapped_e.type == SystemExit
     assert pytest_wrapped_e.value.code == 1
-    
+
 
 def test_calc_plates_int_and_list():
-  result = calc_plates(200, [45, 35, 25, 15, 10, 5, 2.5])
-  assert type(result) == dict
-  assert result == { 45: 4, 10: 2 }
+    '''expected input'''
+    result = calc_plates(200, [45, 35, 25, 15, 10, 5, 2.5])
+    assert isinstance(dict, result)
+    assert result == { 45: 4, 10: 2 }
