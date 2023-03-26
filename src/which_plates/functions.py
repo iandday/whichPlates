@@ -17,7 +17,7 @@ def round_num(number: float) -> int:
         rounded_number = number + (10 - (number % 10))
     else:
         rounded_number = number
-    return rounded_number
+    return int(rounded_number)
 
 
 def calc_plates(weight: int, available_plates: list) -> dict:
