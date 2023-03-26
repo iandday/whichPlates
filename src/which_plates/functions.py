@@ -2,12 +2,11 @@
 
 from decimal import Decimal
 
-def round_num(number: float) -> int:
-    """rounds input to the nearest multiple of 5, assuming smallest plate is 2.5 pounds
 
+def round_num(number: float) -> int:
+    """rounds to nearest multiple of 5, assuming smallest plate is 2.5 pounds
     Args:
         number (float): number to be rounded
-
     Returns:
         int: rounded number
     """
@@ -22,11 +21,9 @@ def round_num(number: float) -> int:
 
 def calc_plates(weight: int, available_plates: list) -> dict:
     """computes the required weight plates to reach supplied weight
-
     Args:
         weight (int): desired weight
         available_plates (list): available plates
-
     Returns:
         dict: number of plates per weight to reach supplied weight
     """

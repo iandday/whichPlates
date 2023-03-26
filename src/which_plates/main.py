@@ -9,18 +9,17 @@ def main():
     """
 
     set_count = 1
-    #weight_in_set = []
+    # weight_in_set = []
     used_plates = {}
     available_plates = [45, 35, 25, 15, 10, 5, 2.5]
 
-
+    # get user input
     bar_weight = int(input("Bar Weight:"))
     rep_max = int(input("One rep max:"))
-    #working_weight = rep_max - bar_weight
+    # working_weight = rep_max - bar_weight
 
     raw_list = input("Percentages for each set, space separated: ").split()
     percentages = [float(n)/100 for n in raw_list if n.isdigit()]
-
 
     for plates in available_plates:
         used_plates[plates] = 0
@@ -28,9 +27,12 @@ def main():
     for percent in percentages:
         weight = functions.round_num((rep_max * percent) - bar_weight)
         if weight <= 0:
-            print ('    Computed weight less than bar weight, try again')
+            print('    Computed weight less than bar weight, try again')
         else:
-            print(F"Set {set_count} @ {round(percent * 100)}%: {round(weight + bar_weight)}lbs, {round(weight)}lbs in plates")
+            percent = round(percent * 100)
+            total_weight = round(weight + bar_weight)
+            weight = round(weight)
+            print(F"Set {set_count} @ {percent}%: {total_weight}lbs, {weight}lbs in plates")  # noqa: E501
         plates = functions.calc_plates(weight, available_plates)
 
         for plate in plates.items():
@@ -40,7 +42,7 @@ def main():
         set_count += 1
 
     # Print summary
-    print ('Plates Needed:')
+    print('Plates Needed:')
     for plate in used_plates.items():
         if used_plates[plate]:
             print(F'     {plate}: {used_plates[plate]}')
