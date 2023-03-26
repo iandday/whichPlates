@@ -34,11 +34,11 @@ jobs:
     - name: "Static analysis: mypy"
       run: |
         source env/bin/activate
-        python -m mypy src/minio_keygen/*.py
+        python -m mypy src/which_plates/*.py
     - name: "Static analysis: flake8"
       run: |
         source env/bin/activate
-        flake8 --statistics --count --max-line-length=130 --max-complexity 8 src/minio_keygen/*.py
+        flake8 --statistics --count --max-line-length=130 --max-complexity 8 src/which_plates/*.py
     - name: "Static analysis: safety"
       run: |
         source env/bin/activate
@@ -50,7 +50,7 @@ jobs:
     - name: "Test: coverage"
       run: |
         source env/bin/activate
-        pytest --cov minio_keygen
+        pytest --cov which_plates
     - name: Build package
       run: |
         source env/bin/activate
@@ -59,12 +59,12 @@ jobs:
     - name: Archive package
       uses: actions/upload-artifact@v3
       with:
-        name: minio_keygen
+        name: which_plates
         path: dist/
 
     - name: Publish distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@v1.6.4
-      if: github.repository == 'iandday/minio-keygen' && matrix.python-version == '3.10'
+      if: github.repository == 'iandday/whichPlates' && matrix.python-version == '3.10'
       continue-on-error: true
       with:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
