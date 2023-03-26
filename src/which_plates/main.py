@@ -51,6 +51,7 @@ def main():
 
     sys.exit(main_function(bar_weight, rep_max, available_plates, percentages))
 
+
 if __name__ == "__main__":
 
     main()
