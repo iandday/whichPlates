@@ -12,28 +12,28 @@ def round_num(number: float) -> int:
         int: rounded number
     """
     if number % 10 < 5:
-        roundedNumber = (number - (number % 10))
+        rounded_number = number - (number % 10)
     elif number % 10 > 5:
-        roundedNumber = (number + (10 - (number % 10)))
+        rounded_number = number + (10 - (number % 10))
     else:
-        roundedNumber = number
-    return roundedNumber
+        rounded_number = number
+    return rounded_number
 
 
-def calc_plates(weight: int, availablePlates: list) -> dict:
+def calc_plates(weight: int, available_plates: list) -> dict:
     """computes the required weight plates to reach supplied weight
 
     Args:
         weight (int): desired weight
-        availablePlates (list): available plates
+        available_plates (list): available plates
 
     Returns:
         dict: number of plates per weight to reach supplied weight
     """
     plates = {}
-    remainingWeight = Decimal(round_num(weight)) / Decimal(2)
-    for plate in availablePlates:
-        if remainingWeight / Decimal(plate) >= Decimal(1):
-            plates[plate] = Decimal(remainingWeight) // Decimal(plate)
-            remainingWeight -= Decimal(plate) * Decimal(plates[plate])
+    remaining_weight = Decimal(round_num(weight)) / Decimal(2)
+    for plate in available_plates:
+        if remaining_weight / Decimal(plate) >= Decimal(1):
+            plates[plate] = Decimal(remaining_weight) // Decimal(plate)
+            remaining_weight -= Decimal(plate) * Decimal(plates[plate])
     return plates
