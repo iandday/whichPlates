@@ -100,3 +100,5 @@ ENV/
 
 # CI/CD
 test-reports
+pytest-coverage.txt
+pytest.xml

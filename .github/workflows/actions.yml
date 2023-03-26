@@ -48,7 +48,12 @@ jobs:
     - name: "Test: coverage"
       run: |
         source env/bin/activate
-        pytest --cov which_plates
+        pytest --cov which_plates --junitxml=pytest.xml --cov-report=term-missing:skip-covered src/which_plates/tests/ | tee pytest-coverage.txt
+    - name: Pytest coverage comment
+      uses: MishaKav/pytest-coverage-comment@main
+      with:
+        pytest-coverage-path: ./pytest-coverage.txt
+        junitxml-path: ./pytest.xml
     - name: Build package
       run: |
         source env/bin/activate
