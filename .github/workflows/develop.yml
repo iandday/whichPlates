@@ -29,24 +29,32 @@ jobs:
     
     - name: "Static analysis: pylint"
       run: |
+        source env/bin/activate
         pylint -d C0301 $(git ls-files '*.py')
     - name: "Static analysis: mypy"
       run: |
+        source env/bin/activate
         python -m mypy src/minio_keygen/*.py
     - name: "Static analysis: flake8"
       run: |
+        source env/bin/activate
         flake8 --statistics --count --max-line-length=130 --max-complexity 8 src/minio_keygen/*.py
     - name: "Static analysis: safety"
       run: |
+        source env/bin/activate
         safety check
     - name: "Test: pytest"
       run: |
+        source env/bin/activate
         py.test --verbose
     - name: "Test: coverage"
       run: |
+        source env/bin/activate
         pytest --cov minio_keygen
     - name: Build package
-      run: python -m build
+      run: |
+        source env/bin/activate
+        python -m build
 
     - name: Archive package
       uses: actions/upload-artifact@v3
