@@ -29,31 +29,33 @@ jobs:
       run: |
         source env/bin/activate
         pylint -d C0301 $(git ls-files '*.py')
+
     - name: "Static analysis: mypy"
       run: |
         source env/bin/activate
         python -m mypy src/which_plates/*.py
+
     - name: "Static analysis: flake8"
       run: |
         source env/bin/activate
         flake8 --statistics --count --max-line-length=130 --max-complexity 8 src/which_plates/*.py
+
     - name: "Static analysis: safety"
       run: |
         source env/bin/activate
         safety check
+
     - name: "Test: pytest"
       run: |
         source env/bin/activate
-        py.test --verbose
-    - name: "Test: coverage"
-      run: |
-        source env/bin/activate
         pytest --cov which_plates --junitxml=pytest.xml --cov-report=term-missing:skip-covered src/which_plates/tests/ | tee pytest-coverage.txt
+    
     - name: Pytest coverage comment
       uses: MishaKav/pytest-coverage-comment@main
       with:
         pytest-coverage-path: ./pytest-coverage.txt
         junitxml-path: ./pytest.xml
+    
     - name: Build package
       run: |
         source env/bin/activate
