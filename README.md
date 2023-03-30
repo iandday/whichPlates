@@ -1,6 +1,9 @@
 # which_plates
 
-CI/CD Status:  ![Branch](https://github.com/iandday/whichPlates/actions/workflows/actions.yml/badge.svg)
+CI/CD Status:  ![Branch](https://github.com/iandday/whichPlates/actions/workflows/main.yml/badge.svg) | ![Branch](https://github.com/iandday/whichPlates/actions/workflows/develop.yml/badge.svg)
+
+<!-- Pytest Coverage Comment:Begin -->
+<!-- Pytest Coverage Comment:End -->
 
 Calculate weight and plates needed for each set based on one rep max weight
 
