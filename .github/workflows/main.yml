@@ -1,8 +1,12 @@
-name: "Test, Build, Publish: Develop"
+name: "Test, Build, Publish: Main"
 
 on: 
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   build_test_publish:
