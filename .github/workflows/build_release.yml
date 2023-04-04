@@ -1,19 +1,17 @@
-name: "Test, Build, Publish: Develop"
+name: "Test, Build, Publish: Main"
 
 on: 
   push:
     branches:
-      - develop
+      - main
   pull_request:
-    branches:
-      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10"]#, "3.9", "3.8"]
+        python-version: ["3.10", "3.9", "3.8"]
     steps:
     - uses: actions/checkout@v3.3.0
     
@@ -59,17 +57,6 @@ jobs:
       with:
         pytest-coverage-path: ./pytest-coverage.txt
         junitxml-path: ./pytest.xml
-    
-    - name: Build package
-      run: |
-        source env/bin/activate
-        python -m build
-
-    - name: Archive package
-      uses: actions/upload-artifact@v3
-      with:
-        name: which_plates
-        path: dist/
 
     - name: Publish distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@v1.6.4
@@ -79,8 +66,40 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         repository_url: https://test.pypi.org/legacy/
 
-    - name: Publish distribution to PyPI
-      uses: pypa/gh-action-pypi-publish@v1.6.4
-      if: github.repository == 'iandday/whichPlates' && matrix.python-version == '3.10' && github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-      with:
-        password: ${{ secrets.PYPI_API_TOKEN }}
+  release:
+      needs: build
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          python-version: ["3.10"]
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+
+        - name: Install dependencies
+          run: |
+            python${{ matrix.python-version }} -m venv env
+            source env/bin/activate
+            python -m pip install --upgrade pip setuptools
+            python -m pip install ".[dev]"
+
+        - name: Build package
+          run: |
+            source env/bin/activate
+            python -m build
+
+        - name: Archive package
+          uses: actions/upload-artifact@v3
+          with:
+            name: which_plates
+            path: dist/
+
+        - name: Publish distribution to PyPI
+          uses: pypa/gh-action-pypi-publish@v1.6.4
+          if: github.repository == 'iandday/whichPlates' && matrix.python-version == '3.10' && github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+          with:
+            password: ${{ secrets.PYPI_API_TOKEN }}
+  
+  
