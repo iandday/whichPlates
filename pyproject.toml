@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Ian Day <ian@ianday.me>"]
 readme = "README.md"
-packages = [{include = "which_plates"}]
+#packages = [{include = "which_plates"}]
 homepage = "https://github.com/iandday/whichPlates"
 repository = "https://github.com/iandday/whichPlates"
 license = "GNUv2"
