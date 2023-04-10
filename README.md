@@ -1,6 +1,9 @@
 # which_plates
 
-CI/CD Status:  ![Branch](https://github.com/iandday/whichPlates/actions/workflows/main.yml/badge.svg) | ![Branch](https://github.com/iandday/whichPlates/actions/workflows/develop.yml/badge.svg)
+CI/CD Status:  
+
+* [![Linting](https://github.com/iandday/whichPlates/actions/workflows/lint.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/lint.yml)
+
 
 <!-- Pytest Coverage Comment:Begin -->
 <!-- Pytest Coverage Comment:End -->
