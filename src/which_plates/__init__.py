@@ -1,7 +1,11 @@
 """ initialize """
 
-from .functions import round_num, calc_plates
+from .functions import calc_plates, round_num
 from .main import main
-from .version import __version__  # noqa: F401
 
-__all__ = ['round_num', 'calc_plates', 'main', ]
+__all__ = [
+    "round_num",
+    "calc_plates",
+    "main",
+]
+__version__ = "0.1.0"

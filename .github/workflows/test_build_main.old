@@ -5,6 +5,9 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
+
 
 jobs:
   build:
@@ -58,14 +61,6 @@ jobs:
         pytest-coverage-path: ./pytest-coverage.txt
         junitxml-path: ./pytest.xml
 
-    - name: Publish distribution to Test PyPI
-      uses: pypa/gh-action-pypi-publish@v1.6.4
-      if: github.repository == 'iandday/whichPlates' && matrix.python-version == '3.10'
-      continue-on-error: true
-      with:
-        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-        repository_url: https://test.pypi.org/legacy/
-
   release:
       needs: build
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -98,7 +93,7 @@ jobs:
 
         - name: Publish distribution to PyPI
           uses: pypa/gh-action-pypi-publish@v1.6.4
-          if: github.repository == 'iandday/whichPlates' && matrix.python-version == '3.10' && github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+          if: github.repository == 'iandday/whichPlates' && matrix.python-version == '3.10' && github.event_name == 'push')
           with:
             password: ${{ secrets.PYPI_API_TOKEN }}
   
