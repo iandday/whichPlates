@@ -3,7 +3,7 @@
 CI/CD Status:  
 
 * [![Linting](https://github.com/iandday/whichPlates/actions/workflows/lint.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/lint.yml)
-
+* [![Linting](https://github.com/iandday/whichPlates/actions/workflows/test.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/test.yml)
 
 <!-- Pytest Coverage Comment:Begin -->
 <!-- Pytest Coverage Comment:End -->
