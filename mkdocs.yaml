@@ -1,0 +1,23 @@
+site_name: Which Plates
+
+theme:
+  name: "material"
+
+nav:
+  - Index Page: index.md
+  - Tutorials: tutorials.md
+  - How-To-Guides: how-to-guides.md
+  - Reference: reference.md
+  - Explanation: explanation.md
+
+# to navigate with `/site` content correctly
+use_directory_urls: false
+
+plugins:
+- search
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [src]
+
+repo_url: https://github.com/iandday/whichPlates

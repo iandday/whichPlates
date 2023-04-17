@@ -4,6 +4,7 @@ CI/CD Status:
 
 [![Linting](https://github.com/iandday/whichPlates/actions/workflows/lint.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/lint.yml)
 [![Testing](https://github.com/iandday/whichPlates/actions/workflows/test.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/test.yml)
+[![Documentation](https://github.com/iandday/whichPlates/actions/workflows/doucmentation.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/documentation.yml)
 
 <!-- Pytest Coverage Comment:Begin -->
 <!-- Pytest Coverage Comment:End -->
