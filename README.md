@@ -1,10 +1,10 @@
 # which_plates
 
 CI/CD Status:  
-
+![Release](https://img.shields.io/github/v/release/iandday/whichPlates?color=brightgreen&sort=semver)
 [![Linting](https://github.com/iandday/whichPlates/actions/workflows/lint.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/lint.yml)
 [![Testing](https://github.com/iandday/whichPlates/actions/workflows/test.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/test.yml)
-[![Documentation](https://github.com/iandday/whichPlates/actions/workflows/doucmentation.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/documentation.yml)
+[![Documentation](https://github.com/iandday/whichPlates/actions/workflows/documentation.yml/badge.svg)](https://github.com/iandday/whichPlates/actions/workflows/documentation.yml)
 
 <!-- Pytest Coverage Comment:Begin -->
 <!-- Pytest Coverage Comment:End -->

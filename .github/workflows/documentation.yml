@@ -2,9 +2,9 @@
 name: Deploy Documentation
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types:
+      - published
 
 jobs:
   deploy-documentation:

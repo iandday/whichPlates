@@ -31,6 +31,10 @@ mkdocs = "^1.4.2"
 mkdocs-material = "^9.1.6"
 mkdocstrings = {extras = ["python"], version = "^0.21.2"}
 
+
+[tool.poetry.group.semver.dependencies]
+python-semantic-release = "^7.33.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -74,3 +78,14 @@ exclude_lines = [
     'def __str__',
     'raise NotImplementedError'
 ]
+[tool.semantic_release]
+branch = "main"
+version_variable = "src/which_plates/__init__.py:__version__"
+version_toml = "pyproject.toml:tool.poetry.version"
+version_source = "tag"
+commit_version_number = true
+tag_commit = true
+upload_to_pypi = false
+upload_to_release = false
+hvcs = "github"
+commit_message = "{version} [skip ci]" # skip triggering ci pipelines for version commits
