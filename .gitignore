@@ -102,3 +102,4 @@ ENV/
 test-reports
 pytest-coverage.txt
 pytest.xml
+.DS_Store
