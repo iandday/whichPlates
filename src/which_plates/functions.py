@@ -1,4 +1,4 @@
-""" helper functions"""
+"""Supporting functionss"""
 
 from decimal import Decimal
 
