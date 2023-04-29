@@ -20,3 +20,9 @@ jobs:
       - call-linting-pipeline
     uses: ./.github/workflows/release.yml
     secrets: inherit
+  call-publish-pipeline:
+    name: Publish
+    needs:
+      - call-publish-pipeline
+    uses: ./.github/workflows/publish.yml
+    secrets: inherit
