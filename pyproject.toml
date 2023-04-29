@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "which_plates"
-version = "0.5.0"
+version = "0.6.0"
 description = ""
 authors = ["Ian Day <ian@ianday.me>"]
 readme = "README.md"

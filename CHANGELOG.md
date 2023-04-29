@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.0 (2023-04-29)
+### Feature
+* Typo ([`afe7601`](https://github.com/iandday/whichPlates/commit/afe760187eec2168006d808344ef9c00c8ddf5b6))
+* **functions:** Actions ([`aa86de3`](https://github.com/iandday/whichPlates/commit/aa86de32b5280a578cb625f7a39309b89fc9e552))
+
 ## v0.5.0 (2023-04-29)
 ### Feature
 * Workflows ([`230b001`](https://github.com/iandday/whichPlates/commit/230b001a0eea476e060adf17e4fe7d4d9858571c))
