@@ -23,6 +23,6 @@ jobs:
   call-publish-pipeline:
     name: Publish
     needs:
-      - call-publish-pipeline
+      - call-release-pipeline
     uses: ./.github/workflows/publish.yml
     secrets: inherit
