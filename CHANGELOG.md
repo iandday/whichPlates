@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2023-04-29)
+### Feature
+* Updated gitignore ([`50b78fa`](https://github.com/iandday/whichPlates/commit/50b78fa1179a9c13e5965236fd7b5a93f1611d6e))
+
 ## v0.3.0 (2023-04-29)
 ### Feature
 * **functions:** Update actions ([`04ccc3e`](https://github.com/iandday/whichPlates/commit/04ccc3e4fe6702aab5a7daf95f9c12a66a538f4c))
