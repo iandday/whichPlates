@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2023-04-29)
+### Feature
+* Workflows ([`230b001`](https://github.com/iandday/whichPlates/commit/230b001a0eea476e060adf17e4fe7d4d9858571c))
+
 ## v0.4.0 (2023-04-29)
 ### Feature
 * Updated gitignore ([`50b78fa`](https://github.com/iandday/whichPlates/commit/50b78fa1179a9c13e5965236fd7b5a93f1611d6e))
