@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.7.0 (2023-04-30)
+### Feature
+* :bug: Sort list of plates first ([`c7168b1`](https://github.com/iandday/whichPlates/commit/c7168b15a1ab3a2f5f46a1a5b92868074356980b))
+
 ## v0.6.0 (2023-04-29)
 ### Feature
 * Typo ([`afe7601`](https://github.com/iandday/whichPlates/commit/afe760187eec2168006d808344ef9c00c8ddf5b6))
