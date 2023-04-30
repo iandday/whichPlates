@@ -35,6 +35,7 @@ def calc_plates(weight: int, available_plates: list) -> dict:
     """
     plates = {}
     remaining_weight = Decimal(round_num(weight))
+    available_plates.sort(reverse=True)
     for plate in available_plates:
         if remaining_weight / Decimal(plate) >= Decimal(2):
             plates[plate] = int(Decimal(remaining_weight) // Decimal(plate))
