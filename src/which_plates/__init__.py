@@ -8,6 +8,4 @@ __all__ = [
     "calc_plates",
     "main",
 ]
-
 __version__ = "0.7.0"
-
