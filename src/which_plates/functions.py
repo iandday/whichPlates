@@ -40,12 +40,11 @@ def calc_plates(weight: int, available_plates: list[float]) -> dict:
     for plate in available_plates:
         # at least two plates left in remaining weight
         if remaining_weight / Decimal(plate) >= Decimal(2):
-
             # can only use even number of plates
-            if ((remaining_weight / Decimal(plate)) %2)==0:
+            if ((remaining_weight / Decimal(plate)) % 2) == 0:
                 plate_count = int(Decimal(remaining_weight) // Decimal(plate))
             else:
-                plate_count = int(Decimal(remaining_weight) // Decimal(plate))-1
+                plate_count = int(Decimal(remaining_weight) // Decimal(plate)) - 1
             plates[plate] = plate_count
 
             remaining_weight -= Decimal(plate) * Decimal(plates[plate])
