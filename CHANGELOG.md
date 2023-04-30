@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.8.0 (2023-04-30)
+### Feature
+* Fixed math issue ([`364cb3c`](https://github.com/iandday/whichPlates/commit/364cb3ccdd5be0ba9837bf1ccb749aff79d9a2e9))
+
+### Fix
+* Linting ([`13e45bc`](https://github.com/iandday/whichPlates/commit/13e45bc61d96b53374e0d0e2584cf8a59fdc1d7f))
+
 ## v0.7.0 (2023-04-30)
 ### Feature
 * :bug: Sort list of plates first ([`c7168b1`](https://github.com/iandday/whichPlates/commit/c7168b15a1ab3a2f5f46a1a5b92868074356980b))
