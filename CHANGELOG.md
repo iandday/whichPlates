@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.9.0 (2023-05-01)
+### Feature
+* Fix rounding ([`3198e9b`](https://github.com/iandday/whichPlates/commit/3198e9b88b3b59979556dc6088ec9f539b4041cd))
+
 ## v0.8.0 (2023-04-30)
 ### Feature
 * Fixed math issue ([`364cb3c`](https://github.com/iandday/whichPlates/commit/364cb3ccdd5be0ba9837bf1ccb749aff79d9a2e9))
